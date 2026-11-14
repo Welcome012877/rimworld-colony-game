@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RimWorld: First Colony</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <div class="game-tag">Colony Survival</div>
+          <h1>RimWorld: First Colony</h1>
+        </div>
+        <div class="status-row">
+          <div class="stat-pill"><span>Day</span><strong id="dayValue">1</strong></div>
+          <div class="stat-pill"><span>Food</span><strong id="foodValue">45</strong></div>
+          <div class="stat-pill"><span>Wood</span><strong id="woodValue">20</strong></div>
+          <div class="stat-pill"><span>Stone</span><strong id="stoneValue">18</strong></div>
+          <div class="stat-pill"><span>Steel</span><strong id="metalValue">8</strong></div>
+          <div class="stat-pill"><span>Morale</span><strong id="moraleValue">75</strong></div>
+        </div>
+      </header>
+
+      <main class="game-layout">
+        <section class="left-panel">
+          <div class="panel-box">
+            <div class="panel-header">
+              <h2>Colony</h2>
+              <button id="nextDayBtn" class="primary-btn">Advance Day</button>
+            </div>
+            <div id="colonistList" class="colonist-list"></div>
+          </div>
+
+          <div class="panel-box">
+            <div class="panel-header">
+              <h2>Actions</h2>
+            </div>
+            <div class="action-grid">
+              <button class="action-btn" data-action="forage">Forage</button>
+              <button class="action-btn" data-action="gatherWood">Gather Wood</button>
+              <button class="action-btn" data-action="mineStone">Mine Stone</button>
+              <button class="action-btn" data-action="smeltMetal">Smelt Metal</button>
+              <button class="action-btn" data-action="rest">Rest</button>
+              <button class="action-btn" data-action="buildShelter">Build Shelter</button>
+            </div>
+          </div>
+        </section>
+
+        <aside class="right-panel">
+          <div class="panel-box">
+            <div class="panel-header">
+              <h2>World</h2>
+            </div>
+            <div class="world-card">
+              <div class="world-line"><span>Weather</span><strong id="weatherValue">Mild</strong></div>
+              <div class="world-line"><span>Threat</span><strong id="threatValue">Low</strong></div>
+              <div class="world-line"><span>Defense</span><strong id="defenseValue">0</strong></div>
+              <div class="world-line"><span>Objective</span><strong id="objectiveValue">Survive 30 days</strong></div>
+            </div>
+          </div>
+
+          <div class="panel-box">
+            <div class="panel-header">
+              <h2>Log</h2>
+            </div>
+            <ul id="eventLog" class="event-log"></ul>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <div id="gameOverlay" class="overlay hidden">
+      <div class="overlay-card">
+        <h2 id="overlayTitle">Colony Status</h2>
+        <p id="overlayText"></p>
+        <button id="restartBtn" class="primary-btn">Restart</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
